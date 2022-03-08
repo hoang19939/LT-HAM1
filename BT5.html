@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<label for="T1" style="color: orangered"> Nhập tên ngôi sao</label>
+<input type="text" id="T1">
+<button id="color1" onclick="findStar()" onmouseover="changeColor()" onmouseout="changeColorOut()">click here</button>
+<span id="result"></span>
+
+<body>
+<script>
+    function findStar() {
+        let keyword = document.getElementById("T1").value
+        let nameStar = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus']
+        let nameConstellation = ['UrsaMinor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'UrsaMajor', 'Leo']
+        let max = nameStar.length
+
+        for (let i = 0; i < max; i++) {
+            if (nameStar[i] === keyword) {
+                document.getElementById("result").innerText = nameConstellation[i]
+                break
+            }
+            if (nameConstellation[i] === keyword) {
+                document.getElementById("result").innerText = nameStar[i]
+                break
+            }
+        }
+    }
+    let color2 = document.getElementById('color1');
+    function changeColor() {
+
+        color2.style.color = 'red'
+    }
+    function changeColorOut() {
+        color2.style.color = 'black'
+
+    }
+
+</script>
+
+</body>
+</html>
